@@ -1,17 +1,30 @@
 import { Component } from '@angular/core';
 
 import { NavController, NavParams } from 'ionic-angular';
+import { HelloIonicPage } from '../hello-ionic/hello-ionic';
 
+
+//PÁGINA DA VIAGEM
 
 @Component({
   selector: 'page-item-details',
   templateUrl: 'item-details.html'
 })
 export class ItemDetailsPage {
-  selectedItem: any;
+  travelname: string;
+  description: string;
+  date: any;
+  // HelloIonicPage = this.HelloIonicPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    // If we navigated to this page, we will have an item available as a nav param
-    this.selectedItem = navParams.get('item');
+    this.travelname = this.navParams.get('travelname');
+    this.description = this.navParams.get('traveldescription');
+    this.date = this.navParams.get('date');
+    // this.navbar.backButtonClick() 
   }
+
+
+
+
+
 }

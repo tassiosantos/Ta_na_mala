@@ -1,20 +1,23 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>My First List</ion-title>
+    <ion-title>Nova Viagem</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon name="{{item.icon}}" item-left></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-right>
-        {{item.note}}
-      </div>
-    </button>
-  </ion-list>
+  <ion-item>
+    <ion-label floating >Nome da viagem</ion-label>
+    <ion-input [(ngModel)]= 'newtravelname' ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Descrição</ion-label>
+    <ion-textarea [(ngModel)]= 'newtraveldescription' ></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Date</ion-label>
+    <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="mydate"></ion-datetime>
+  </ion-item>
+
+  <button ion-button round (click)='newTravel()'> Criar Viagem</button>
+
 </ion-content>

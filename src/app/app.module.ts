@@ -9,29 +9,45 @@ import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ViagemProvider } from '../providers/viagem/viagem';
+import { Http } from '@angular/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { NativeStorage } from '@ionic-native/native-storage';
+import { HttpModule } from '@angular/http';
+import  { DatePicker } from '@ionic-native/date-picker'
+
 
 @NgModule({
   declarations: [
     MyApp,
     HelloIonicPage,
     ItemDetailsPage,
-    ListPage
+    ListPage,
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp),
+    HttpClientModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HelloIonicPage,
     ItemDetailsPage,
-    ListPage
+    ListPage,
+    
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    NativeStorage,
+    ViagemProvider,
+    HttpClient,
+    DatePicker,
+    
+    
   ]
 })
 export class AppModule {}
